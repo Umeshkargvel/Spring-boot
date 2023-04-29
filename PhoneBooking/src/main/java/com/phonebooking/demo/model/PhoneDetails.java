@@ -6,47 +6,71 @@ import jakarta.persistence.Id;
 @Entity
 public class PhoneDetails {
 	@Id
-	private int ModelId;
-	public int getModelId() {
-		return ModelId;
+	private int modelid;
+	private String brand;
+	private String modelname;
+	private int price;
+	private String processer;
+	private String ram;
+	
+	private String storage;
+	private String colour;
+	private String offer;
+	PhoneDetails(){}
+	public int getModelid() {
+		return modelid;
 	}
-	public void setModelId(int modelId) {
-		ModelId = modelId;
+	public void setModelid(int modelid) {
+		this.modelid = modelid;
 	}
 	public String getBrand() {
-		return Brand;
+		return brand;
 	}
 	public void setBrand(String brand) {
-		Brand = brand;
+		this.brand = brand;
 	}
-	public String getModelName() {
-		return ModelName;
+	public String getModelname() {
+		return modelname;
 	}
-	public void setModelName(String modelName) {
-		ModelName = modelName;
-	}
-	public String getProcesser() {
-		return Processer;
-	}
-	public void setProcesser(String processer) {
-		Processer = processer;
-	}
-	public String getRam() {
-		return Ram;
-	}
-	public void setRam(String ram) {
-		Ram = ram;
+	public void setModelname(String modelname) {
+		this.modelname = modelname;
 	}
 	public int getPrice() {
-		return Price;
+		return price;
 	}
 	public void setPrice(int price) {
-		Price = price;
+		this.price = price;
 	}
-	private String Brand;
-	private String ModelName;
-	private String Processer;
-	private String Ram;
-	private int Price;
+	public String getProcesser() {
+		return processer;
+	}
+	public void setProcesser(String processer) {
+		this.processer = processer;
+	}
+	public String getRam() {
+		return ram;
+	}
+	public void setRam(String ram) {
+		this.ram = ram;
+	}
+	public String getStorage() {
+		return storage;
+	}
+	public void setStorage(String storage) {
+		this.storage = storage;
+	}
+	public String getColour() {
+		return colour;
+	}
+	public void setColour(String colour) {
+		this.colour = colour;
+	}
+	public String getOffer() {
+		return offer;
+	}
+	public void setOffer(String offer) {
+		this.offer = offer;
+	}
+
 
 }
