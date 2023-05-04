@@ -1,7 +1,10 @@
 package com.phonebooking.demo.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class PhoneDetails {
@@ -16,6 +19,17 @@ public class PhoneDetails {
 	private String storage;
 	private String colour;
 	private String offer;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="features")
+	private Special fid;
+	
+	public Special getFid() {
+		return fid;
+	}
+	public void setFid(Special fid) {
+		this.fid = fid;
+	}
 	PhoneDetails(){}
 	public int getModelid() {
 		return modelid;

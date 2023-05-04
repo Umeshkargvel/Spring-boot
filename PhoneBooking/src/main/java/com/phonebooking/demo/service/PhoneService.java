@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import com.phonebooking.demo.dao.PhoneRepository;
 import com.phonebooking.demo.model.PhoneDetails;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class PhoneService {
 	@Autowired
@@ -90,7 +92,29 @@ public class PhoneService {
 		return phoRepository.findByBrand(brand)	;
 	}
 	
+	public List<PhoneDetails> getModelNameBrand(String brand,String modelname)
+	{
+		return phoRepository.getModelNameByBrand(brand, modelname);
+	}
 	
 	
+	public List<PhoneDetails> getBrand(String brand)
+	{
+		return phoRepository.getBrand(brand);
+	}
+	
+	@Transactional
+	public int deleteByBrandname(String brand)
+	{
+		return phoRepository.deleteByBrandname(brand);
+	}
+	
+	@Transactional
+	public int updateByModelname(String modelname,int brandid) 
+	{
+		return phoRepository.updateByModelname(modelname, brandid);
+	}
+	
+
 
 }
