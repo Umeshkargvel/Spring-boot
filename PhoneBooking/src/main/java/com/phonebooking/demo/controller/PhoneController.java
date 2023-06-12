@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 
 @RestController
+@CrossOrigin("*")
 public class PhoneController {
 	
 	@Autowired
@@ -43,10 +45,10 @@ public class PhoneController {
 	}
 	
 	@Tag(name="Put",description="put data")
-	@PutMapping(value="/put")
-	public PhoneDetails updatePhone(@RequestBody PhoneDetails p) {
+	@PutMapping(value="/put/{id}")
+	public PhoneDetails updatePhone(@RequestBody PhoneDetails p,@PathVariable int id) {
 		
-		return phoService.savePhone(p);
+		return phoService.updatePhone(p,id);
 	}
 	
 	@Tag(name="Delete",description="delete data")

@@ -31,7 +31,7 @@ public class PhoneService {
 		return phoRepository.save(p);
 	}
 
-	public PhoneDetails updatePhone(PhoneDetails p)
+	public PhoneDetails updatePhone(PhoneDetails p,int id)
 	{
 		return phoRepository.save(p);
 	}

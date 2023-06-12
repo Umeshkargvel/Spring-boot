@@ -1,14 +1,17 @@
-package com.phonebooking.demo.model;
+ package com.phonebooking.demo.model;
 
-import jakarta.persistence.CascadeType;
+//import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+//import jakarta.persistence.JoinColumn;
+//import jakarta.persistence.OneToOne;
 
 @Entity
 public class PhoneDetails {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int modelid;
 	private String brand;
 	private String modelname;
@@ -20,16 +23,16 @@ public class PhoneDetails {
 	private String colour;
 	private String offer;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="features")
-	private Special fid;
+//	@OneToOne(cascade=CascadeType.ALL)
+//	@JoinColumn(name="features")
+//	private Special fid;
 	
-	public Special getFid() {
-		return fid;
-	}
-	public void setFid(Special fid) {
-		this.fid = fid;
-	}
+//	public Special getFid() {
+//		return fid;
+//	}
+//	public void setFid(Special fid) {
+//		this.fid = fid;
+//	}
 	PhoneDetails(){}
 	public int getModelid() {
 		return modelid;
